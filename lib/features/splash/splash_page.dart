@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../common/constants/app_colors.dart';
+import '../../common/constants/app_text_styles.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -8,20 +10,18 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
         body: Container(
       alignment: Alignment.center,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            Color(0xFF734bd1),
-            Color(0xFF996dff),
-          ],
+          colors: AppColors.gradientColors,
         ),
       ),
-      child: const Text(
-        'My Recipe',
-        style: TextStyle(
-            fontSize: 30.0, fontWeight: FontWeight.w700, color: Colors.white),
+      child: Text(
+        'Recipe',
+        style: AppTextStyles.bigText.copyWith(
+          color: AppColors.white,
+        )
       ),
     ));
   }
